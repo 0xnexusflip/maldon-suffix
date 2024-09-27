@@ -80,7 +80,7 @@ impl Miner for Create2Miner {
                     let hash = keccak256(to_hash);
 
                     // check wether we have a match
-                    hash[12..].starts_with(pattern).then(|| {
+                    hash[12..].ends_with(pattern).then(|| {
                         (
                             Address::from_slice(&hash[12..32]),
                             FixedBytes::<32>::from_slice(&to_hash[21..53]),
@@ -142,7 +142,7 @@ impl Miner for Create3Miner {
                 let hash = keccak256(proxy_create_buffer);
 
                 hash[12..]
-                    .starts_with(pattern)
+                    .ends_with(pattern)
                     .then(|| (Address::from_slice(&hash[12..32]), salt.into()))
             });
 
