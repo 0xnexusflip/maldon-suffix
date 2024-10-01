@@ -87,7 +87,7 @@ impl Miner for Create2Miner {
                         )
                     })
                 });
-
+            
             // Exists the loop.
             if let Some(found) = maybe_found {
                 break (found);
@@ -149,6 +149,7 @@ impl Miner for Create3Miner {
             // Exists the loop.
             if let Some(found) = maybe_found {
                 break (found);
+                //continue;
             }
         }
     }
