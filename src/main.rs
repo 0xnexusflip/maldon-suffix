@@ -37,7 +37,7 @@ fn main() -> Result<(), hex::FromHexError> {
         };
 
         // Print the found result
-        println!("{salt:?} , {address:?}");
+        println!("{salt:?},{address:?}");
 
         // The loop will continue indefinitely
     }
